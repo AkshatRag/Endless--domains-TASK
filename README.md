@@ -89,7 +89,7 @@ This task clarified:
 
 ## Use of AI (Honest Reflection)
 
-I used  Antigravity as a **development assistant**, not a final solution generator.
+I used  Google AI Studio as a **development assistant**, not a final solution generator.
 
 ### How I used AI
 

@@ -61,9 +61,17 @@ export const StatCard = ({ label, value, change, icon, active, color, onClick }:
               stroke={active ? "#fff" : sparklineColor} 
               strokeWidth="2.5"
               strokeLinecap="round"
-              className={cn("drop-shadow-[0_0_8px_currentColor]", !active && "opacity-80")}
-              style={{ color: active ? "#fff" : sparklineColor }}
+              className={cn(
+                "drop-shadow-[0_0_8px_currentColor]", 
+                !active && "opacity-80",
+                active ? "text-white" : {
+                  "text-[#00f0ff]": color === "cyan",
+                  "text-[#ff0055]": color === "pink",
+                  "text-[#ffb800]": color === "yellow",
+                }
+              )}
             />
+
           </svg>
         </div>
         <div className={cn(

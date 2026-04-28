@@ -6,3 +6,5 @@ I built the RecehTok Dashboard with a focus on "clean code meets high-end design
 *   **Neon & Glassmorphism UI**: To capture the premium crypto aesthetic, I used **Tailwind v4** with custom CSS variables for neon colors. By combining `backdrop-blur` with absolute-positioned "glow" layers, I achieved the depth and vibrancy seen in the Figma design.
 *   **Recharts for Data**: I chose **Recharts** because it provides deep access to SVG properties. This allowed me to implement custom linear gradients and overlapping neon lines for the portfolio chart, which is much harder to do with more rigid chart libraries.
 *   **TypeScript & Data Integrity**: I used strict interfaces for every `Coin` and `Transaction` object. This ensures that the UI components always receive correctly formatted data, preventing the common "undefined" errors that pop up when building complex dashboards.
+*   **No Inline Styles**: Adhering to project constraints, I moved all dynamic styling (like neon glows and chart filters) into **Tailwind utility classes** and **global CSS variables**. This keeps the JSX clean and ensures all styles are manageable through the central design system.
+

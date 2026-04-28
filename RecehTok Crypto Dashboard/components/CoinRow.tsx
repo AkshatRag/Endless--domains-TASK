@@ -77,9 +77,16 @@ export const CoinRow = ({ coin, colorCode, currency = "USD" }: CoinRowProps) => 
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="drop-shadow-[0_0_10px_currentColor] transition-all duration-500"
-            style={{ color: strokeColor }}
+            className={cn(
+              "drop-shadow-[0_0_10px_currentColor] transition-all duration-500",
+              {
+                "text-[#00f0ff]": colorCode === "cyan",
+                "text-[#ff0055]": colorCode === "pink",
+                "text-[#ffb800]": colorCode === "yellow",
+              }
+            )}
           />
+
         </svg>
       </div>
     </div>

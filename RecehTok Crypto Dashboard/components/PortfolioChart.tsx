@@ -74,9 +74,12 @@ export const PortfolioChart = () => {
             tickMargin={10}
           />
           <Tooltip
-            contentStyle={{ backgroundColor: 'rgba(30, 29, 54, 0.9)', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '8px' }}
-            itemStyle={{ color: '#fff' }}
+            contentStyle={{}}
+            itemStyle={{}}
+            wrapperClassName="chart-tooltip"
+            labelClassName="chart-tooltip-item"
           />
+
           <Area
             type="monotone"
             dataKey="btc"
@@ -85,7 +88,8 @@ export const PortfolioChart = () => {
             fillOpacity={1}
             fill="url(#colorBtc)"
             animationDuration={2000}
-            style={{ filter: 'drop-shadow(0 0 8px rgba(255,0,85,0.5))' }}
+            className="neon-glow-pink"
+
           />
           <Area
             type="monotone"
@@ -95,7 +99,8 @@ export const PortfolioChart = () => {
             fillOpacity={1}
             fill="url(#colorEth)"
             animationDuration={2000}
-            style={{ filter: 'drop-shadow(0 0 8px rgba(0,240,255,0.5))' }}
+            className="neon-glow-blue"
+
           />
           <Area
             type="monotone"
@@ -105,7 +110,8 @@ export const PortfolioChart = () => {
             fillOpacity={1}
             fill="url(#colorLtc)"
             animationDuration={2000}
-            style={{ filter: 'drop-shadow(0 0 8px rgba(255,184,0,0.5))' }}
+            className="neon-glow-yellow"
+
           />
         </AreaChart>
       </ResponsiveContainer>

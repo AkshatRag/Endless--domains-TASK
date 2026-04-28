@@ -1,7 +1,7 @@
 # Architecture Decisions: Domain Detail Page
 
-The domain detail page is implemented as a **Server Component** to optimize performance and SEO. By fetching data on the server, we reduce the client-side JavaScript payload and ensure sensitive logic stays off the browser. Conversely, the `AddToCartButton` is a **Client Component** because it requires stateful interactivity (`useState`) and event listeners that only run in the browser.
+I implemented the domain page as a **Server Component** to ensure fast initial loads and solid SEO. It allows the server to handle data filtering privately, keeping our logic secure and preventing the client from downloading the entire dataset. I kept the **AddToCartButton** as a **Client Component** because it requires stateful interactivity that only happens in the browser.
 
-If the main page were a Client Component, we would lose automatic SEO metadata generation and force the client to download the entire domain dataset just to filter for one record, leading to "waterfall" delays and privacy leaks.
+If the whole page were a client component, we’d lose automatic SEO metadata and suffer from "hydration lag," forcing users to wait for JavaScript just to see basic content. 
 
-**TypeScript** is critical at this boundary; it ensures that the data fetched by the server exactly matches the props expected by the client component. This prevents runtime "undefined" errors when accessing domain properties and guarantees type safety across the network bridge, catching schema mismatches during development.
+**TypeScript** is my safety net at this server-client boundary. It acts as a strict contract, ensuring the data fetched on the server matches exactly what the interactive components expect. This prevents runtime "undefined" errors and makes the codebase much more reliable and easier to scale as I grow the project.

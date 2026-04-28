@@ -1,4 +1,4 @@
-export type Transaction = {
+export interface Transaction {
   id: string;
   type: 'buy' | 'sell' | 'receive' | 'send' | 'other';
   coin: string;
@@ -6,4 +6,5 @@ export type Transaction = {
   value: number;
   date: string;
   description: string;
-};
+}
+

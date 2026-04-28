@@ -1,4 +1,4 @@
-export type Coin = {
+export interface Coin {
   id: string;
   symbol: string;
   name: string;
@@ -6,4 +6,5 @@ export type Coin = {
   change24h: number;
   marketCap: number;
   sparkline: number[];
-};
+}
+
